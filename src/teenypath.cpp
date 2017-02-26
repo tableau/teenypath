@@ -479,12 +479,6 @@ namespace TeenyPath {
             throw std::runtime_error("Could not get handle: " + m_path);
         }
 
-
-        // With VOLUME_NAME_NT, the resolved path will not have the typical drive letter:
-        //   \Device\HarddiskVolume3\myfolder\myjar.jar
-        // With VOLUME_NAME_DOS, the resolved path will have the drive letter:
-        //  D:/myfolder/myjar.jar
-
         // Query the length of the output string.
         DWORD pathLength = GetFinalPathNameByHandle(hFile,              // handle to file
             NULL,               // null buffer

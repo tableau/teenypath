@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN
-#include "../include/teenypath.h"
+#include "teenypath.h"
 #include "catch/catch.hpp"
 
 #include <algorithm>
