@@ -36,12 +36,14 @@ To work with TeenyPath, you need the following:
 
 * A C++ compiler (clang, gcc, msvc).
 * A C++ linker (lld, ld, link.exe).
+* [CMake](https://cmake.org).
 
 ## Compilation
 
-`make`
-
-You can edit the supplied Makefile to use your favorite compiler and runtime instead of your system defaults.
+```
+cmake -H. -B./build
+cmake --build build
+```
 
 ## Link against
 
