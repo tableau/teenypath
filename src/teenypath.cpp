@@ -495,7 +495,8 @@ namespace TeenyPath {
         DWORD result = GetFinalPathNameByHandle(hFile,             // handle to file
             buffer.get(),      // buffer that receives the resolved path
             pathLength,        // max buffer size
-            VOLUME_NAME_DOS);  // path with normal volume label
+
+                        VOLUME_NAME_DOS);  // path with normal volume label
         CloseHandle(hFile);
 
         if (result == 0 || result > pathLength)
@@ -548,7 +549,7 @@ namespace TeenyPath {
         }
         closedir(dir);
 #elif defined(_WIN32)
-        _WIN32FIND_DATA findFileData;
+        WIN32_FIND_DATA findFileData;
 
         wchar_t preppedFilePath[MAX_PATH];
         wcsncpy_s(preppedFilePath, p.wstring().c_str(), MAX_PATH);

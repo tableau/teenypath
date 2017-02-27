@@ -7,7 +7,11 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_ROOT_PATH}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_ROOT_PATH}/lib)
 include_directories(${PROJECT_ROOT_PATH}/include)
 
-list(APPEND CMAKE_CXX_FLAGS "-std=c++1y -fPIC -Wall -Werror")
+if(UNIX)
+    list(APPEND CMAKE_CXX_FLAGS "-std=c++1y -fPIC -Wall -Werror")
+else()
+    add_definitions(-D_UNICODE)
+endif()
 
 set(SOURCE
     include/teenypath.h
