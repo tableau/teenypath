@@ -1,5 +1,6 @@
 *.o
 *.so
 bin/
+build/
 lib/
 .DS_STORE
