@@ -1,3 +1,15 @@
 language: cpp
-compiler: clang
-script: cmake -H. -B./build && cmake --build build && ./bin/test_teenypath
+
+matrix:
+  include:
+    - compiler: clang
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.9
+          packages:
+            - clang-3.9
+      env: COMPILER=clang++-3.9
+
+script: cmake -H. -DCMAKE_CXX_COMPILER=${COMPILER} -B./build && cmake --build build && ./bin/test_teenypath
