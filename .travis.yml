@@ -1,15 +1,23 @@
-language: cpp
-
+language: generic
+os: osx
 matrix:
   include:
-    - compiler: clang
+    - os: linux
+      env: COMPILER_NAME=gcc CXX=g++-5 CC=gcc-5
       addons:
         apt:
-          sources:
-            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+          sources: &sources
             - llvm-toolchain-precise-3.9
+            - ubuntu-toolchain-r-test
+    - os: linux
+      env: COMPILER_NAME=clang CXX=clang++-3.9 CC=clang-3.9
+      addons:
+        apt:
           packages:
             - clang-3.9
-      env: COMPILER=clang++-3.9
+            - g++-5
+          sources: *sources
 
-script: cmake -H. -DCMAKE_CXX_COMPILER=${COMPILER} -B./build && cmake --build build && ./bin/test_teenypath
+script: cmake -H. -B./build && cmake --build build && ./bin/test_teenypath
