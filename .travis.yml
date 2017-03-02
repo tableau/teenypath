@@ -1,0 +1,2 @@
+language: cpp
+script: cmake -H. -B./build && cmake --build build && ./bin/test_teenypath
