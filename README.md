@@ -7,8 +7,8 @@ TeenyPath is a small (single file) cross-platform (Windows, Apple, Linux) filesy
 * [Demo](#demo)
 * [Get started](#get-started)
   * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-  * [Configuration](#configuration)
+  * [Compilation](#compilation)
+  * [Link against](#link-against)
 * [Support](#support)
 * [Contributions](#contributions)
 
