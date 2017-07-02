@@ -461,7 +461,7 @@ namespace TeenyPath {
     path
     path::resolve_absolute() const {
 #if defined(_POSIX_VERSION)
-        std::unique_ptr<char> rpath(realpath(m_path.c_str(), NULL));
+        std::unique_ptr<char, decltype(&std::free)> rpath(realpath(m_path.c_str(), NULL), std::free);
         return path(rpath.get());
 #elif defined(_WIN32)
         HANDLE hFile = CreateFile(this->wstring().c_str(),   // file to open
