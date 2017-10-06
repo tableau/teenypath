@@ -1,5 +1,5 @@
 # TeenyPath
-[![Build Status](https://travis-ci.org/tableau/teenypath.svg?branch=master)](https://travis-ci.org/tableau/teenypath)
+[![As-Is](https://img.shields.io/badge/Support%20Level-As--Is-e8762c.svg)](https://www.tableau.com/support-levels-it-and-developer-tools) [![Build Status](https://travis-ci.org/tableau/teenypath.svg?branch=master)](https://travis-ci.org/tableau/teenypath)
 
 TeenyPath is a small (single file) cross-platform (Windows, Apple, Linux) filesystem abstraction for C++.
 
